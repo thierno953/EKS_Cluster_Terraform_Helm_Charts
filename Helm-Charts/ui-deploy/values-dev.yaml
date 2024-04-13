@@ -1,0 +1,26 @@
+app:
+  replicas: 1
+  image: thiernos/ui
+  imagePullPolicy: IfNotPresent
+  env: dev
+  computeres:
+    limits:
+      cpu: 0.2
+      memory: 500Mi
+    requests:
+      cpu: 0.2
+      memory: 500Mi
+
+service:
+  type: NodePort
+  port: 8080
+  targetport: 8080
+
+container:
+  name: react-ui
+
+hpa:
+  enabled: false
+
+
+
